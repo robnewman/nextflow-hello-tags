@@ -1,6 +1,9 @@
 #!/usr/bin/env nextflow
 
 process sayHello {
+
+  publishDir tags: [ FOO: 'Hello world']
+
   input: 
     val x
   output:
