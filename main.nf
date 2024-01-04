@@ -2,15 +2,15 @@
 
 process sayHello {
 
-  publishDir tags: [ FOO: 'Hello world']
+  publishDir '/pipelines/data/chunks', tags: [ FOO: 'Hello world']
 
   input: 
     val x
   output:
-    stdout
+    path 'chunk_*
   script:
     """
-    echo '$x world!'
+    printf '$x world!' | split -b 1 - chunk_
     """
 }
 
