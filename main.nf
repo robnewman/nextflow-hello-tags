@@ -2,7 +2,7 @@
 
 process sayHello {
 
-  publishDir '/pipelines/data/chunks', tags: [ FOO: 'Hello world']
+  publishDir 's3://robnewman-dataexplorer-ireland/data/pipelines/chunks', mode: 'copy', overwrite: false, tags: [FOO: 'Hello world']
 
   input: 
     val x
