@@ -7,7 +7,7 @@ process sayHello {
   input: 
     val x
   output:
-    path 'chunk_*
+    path 'chunk_*'
   script:
     """
     printf '$x world!' | split -b 1 - chunk_
